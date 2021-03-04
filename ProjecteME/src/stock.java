@@ -9,7 +9,7 @@ public class stock {
 	 */
 	public static boolean accesMan(String pass) {
 		Scanner sc = new Scanner(System.in);
-		String contra = "pass123";
+		String contra = "pass1234";
 		
 		System.out.println(); pass = sc.nextLine();
 		
