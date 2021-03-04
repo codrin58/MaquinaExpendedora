@@ -39,71 +39,87 @@ public class MaquinEx {
         stock[2][1]=12;
         stock[2][2]=12;
         int menu=1;
-        while (menu==1) {
-        System.out.println("Bienvenido,que deseas hacer ?:");
-        System.out.print("");
-        System.out.println("***************Menu***************");
-        System.out.println("Ver Precios/productos/stock: 1");
-        System.out.println("Comprar: 2");
-        System.out.println("Mantenimiento: 3");
-         menu=sc.nextInt();
-       
-        switch(menu) {
-        case 1:
-          System.out.println("Aqui esta nuestro catalogo:");
-          System.out.println(" ");
-          System.out.println("Productos:");
-          showmatriz1(productos);
-          System.out.println("Precios:");
-          showmatriz2(precios);
-          System.out.println("Stock:");
-          showmatriz3(stock);
-          
-          break;
-        case 2:
-         While(tenimstock()==false || tenimcanvi()==false || ComprarCol=4) {
-          System.out.println("Que quieres comprar?");
-          System.out.println("introduce numero columna del productor");
-          int ComprarCol=sc.nextInt();
-          System.out.println("introduce numero fila del productor");
-          int ComprarFil=sc.nextInt();
-          if(tenimstock()==true && tenimcanvi()==true) {
-              System.out.println("Aqui tens el teu producte:" + productos[ComprarCol][ComprarFil]);
-              System.out.println("Aqui tens el teu canvi:"+RetornCanvi());
-          }
-          else if (tenimcanvi()==false && tenimstock()==true) {
-              System.out.println("No hi ha canvi, torna a probar amb el import exacte");
-          }
-           else if (tenimstock()==false) {
-                  System.out.println("No queda d'aquest producte");
-          }
-         }
-          break;
         
-        case 3:
-        default:
-          System.out.print("Escoja una de las opciones validas");
-      }
-       } 
+            while (menu==1)
+            System.out.println("Bienvenido,que deseas hacer ?:");
+            System.out.print("");
+            System.out.println("***************Menu***************");
+            System.out.println("Ver Precios/productos/stock: 1");
+            System.out.println("Comprar: 2");
+            System.out.println("Mantenimiento: 3");
+            menu=sc.nextInt();
+           
+            switch(menu) {
+                case 1:
+                  System.out.println("Aqui esta nuestro catalogo:");
+                  System.out.println(" ");
+                  System.out.println("Productos:");
+                  showmatriz1(productos);
+                  System.out.println("Precios:");
+                  showmatriz2(precios);
+                  System.out.println("Stock:");
+                  showmatriz3(stock);
+                  
+                  break;
+                case 2:
+                    While(tenimstock()==false || tenimcanvi()==false ) {
+                        System.out.println("Que quieres comprar?");
+                        System.out.println("introduce numero columna del productor");
+                        int ComprarCol=sc.nextInt();
+                        System.out.println("introduce numero fila del productor");
+                        int ComprarFil=sc.nextInt();
+                        if(tenimstock()==true && tenimcanvi()==true) {
+                            System.out.println("Aqui tens el teu producte:" + productos[ComprarCol][ComprarFil]);
+                            System.out.println("Aqui tens el teu canvi:"+RetornCanvi());
+                        }
+                        else if (tenimcanvi()==false && tenimstock()==true) {
+                            System.out.println("No hi ha canvi, torna a probar amb el import exacte");
+                        }
+                         else if (tenimstock()==false) {
+                                System.out.println("No queda d'aquest producte");
+                                String contraseñaintroducida=sc.toString();
+                        }
+                       }
+                  break;
+                
+                case 3:
+                    
+                    System.out.println("Manteniment");
+                    System.out.println("Introduzca la clave para manteniment del stock/canvi:");
+                    
+                default:
+                  System.out.print("Escoja una de las opciones validas");
+              }
+           }
+        
+    
+    public void pressAnyKeyToContinue()
+    { 
+           System.out.println("Press Enter key to continue...");
+           try
+           {
+               System.in.read();
+           }  
+           catch(Exception e)
+           {}  
     }
 
-
-    private static boolean tenimstock() {
+    public static boolean tenimstock() {
         // TODO Auto-generated method stub
         return false;
     }
 
-    private static boolean tenimcanvi() {
+   public static boolean tenimcanvi() {
         // TODO Auto-generated method stub
         return false;
     }
 
-    private static String RetornCanvi() {
+    public static String RetornCanvi() {
         // TODO Auto-generated method stub
         return null;
     }
 
-    private static void showmatriz2(float[][] precios) {
+    public static void showmatriz2(float[][] precios) {
         // TODO Auto-generated method stub
         for (int i=0; i < precios.length; i++) {
             for (int j=0; j < precios.length; j++) {
@@ -114,7 +130,7 @@ public class MaquinEx {
           }
     }
     
-    private static void showmatriz3(int[][] stock) {
+    public static void showmatriz3(int[][] stock) {
         // TODO Auto-generated method stub
         for (int i=0; i < stock.length; i++) {
             for (int j=0; j < stock.length; j++) {
@@ -125,7 +141,7 @@ public class MaquinEx {
           }
     }
 
-    private static void showmatriz1(String[][] productos) {
+    public static void showmatriz1(String[][] productos) {
         // TODO Auto-generated method stub
         for (int i=0; i < productos.length; i++) {
             for (int j=0; j < productos.length; j++) {
@@ -134,6 +150,19 @@ public class MaquinEx {
             }
             System.out.println();
           }
+    }
+    public boolean checkOwnerPassword2(String contraseñaintroducida ) {
+        String password = "Patata";
+        int i = 0;
+        while (i < 3) {
+            System.out.println("Enter password");
+            
+            if (contraseñaintroducida.equals(password)){
+                return true;
+            }
+            i++;
+        }
+        return false;
     }
 
 }
