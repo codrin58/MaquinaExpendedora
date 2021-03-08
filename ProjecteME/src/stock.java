@@ -27,7 +27,8 @@ public class stock {
 	 */
 	public static boolean accesMan(String pass, String contra) {
 		
-		if (pass == contra) {
+		if (pass.equals(contra))
+) {
 			return true;
 		}
 		
