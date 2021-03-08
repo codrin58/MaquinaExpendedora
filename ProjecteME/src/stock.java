@@ -1,12 +1,6 @@
 import java.util.Scanner;
 
 public class stock {
-	String contra = "pass1234";
-	System.out.println(); pass = sc.nextLine();
-
-	Scanner sc = new Scanner(System.in);
-	
-	System.out.println(accesMan(pass));
 	
 	/***
 	 * Saber si la contrassenya és correcte
@@ -50,7 +44,12 @@ public class stock {
 	}
 	
 	public static void main(String[] args) {
+		String contra = "pass1234";
+		System.out.println(); pass = sc.nextLine();
 
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println(accesMan(pass));
 	}
 
 }
