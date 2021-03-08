@@ -17,8 +17,8 @@ public class stock {
 	    else {
 	        System.out.println("No tenim Stock");
 	    }
-	    
-	}*/
+	    */
+	}
 	
 	/***
 	 * Saber si la contrassenya és correcte
