@@ -1,13 +1,30 @@
 import java.util.Scanner;
 
 public class stock {
+	public static void main(String[] args) {
+		
+		String contra = "pass1234";
+		System.out.println(); pass = sc.nextLine();
+
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println(accesMan(pass));
+		
+		/*/Proba per stock/
+	    if ( accesMan(pass,contra)==true) {
+	    System.out.println("Tenim stock");
+	    }
+	    else {
+	        System.out.println("No tenim Stock");
+	    }*/
+	}
 	
 	/***
 	 * Saber si la contrassenya és correcte
 	 * @param Contrassenya introduïda
 	 * @return
 	 */
-	public static boolean accesMan(String pass) {
+	public static boolean accesMan(String pass, String contra) {
 		
 		if (pass == contra) {
 			return true;
@@ -41,16 +58,6 @@ public class stock {
 		else {
 		   return false;
 		}
-	}
-	
-	public static void main(String[] args) {
-		
-		String contra = "pass1234";
-		System.out.println(); pass = sc.nextLine();
-
-		Scanner sc = new Scanner(System.in);
-		
-		System.out.println(accesMan(pass));
 	}
 
 }
