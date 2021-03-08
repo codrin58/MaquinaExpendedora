@@ -44,12 +44,14 @@ public class stock {
 	}
 	
 	public static void main(String[] args) {
+		
 		String contra = "pass1234";
 		System.out.println(); pass = sc.nextLine();
 
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println(accesMan(pass));
+		System.out.println("prova");
 	}
 
 }
