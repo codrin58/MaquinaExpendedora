@@ -51,7 +51,6 @@ public class stock {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println(accesMan(pass));
-		System.out.println("prova");
 	}
 
 }
