@@ -1,6 +1,12 @@
 import java.util.Scanner;
 
 public class stock {
+	String contra = "pass1234";
+	System.out.println(); pass = sc.nextLine();
+
+	Scanner sc = new Scanner(System.in);
+	
+	System.out.println(accesMan(pass));
 	
 	/***
 	 * Saber si la contrassenya és correcte
@@ -8,10 +14,6 @@ public class stock {
 	 * @return
 	 */
 	public static boolean accesMan(String pass) {
-		Scanner sc = new Scanner(System.in);
-		String contra = "pass1234";
-		
-		System.out.println(); pass = sc.nextLine();
 		
 		if (pass == contra) {
 			return true;
@@ -37,16 +39,15 @@ public class stock {
 	 * @param col
 	 * @return
 	 */
-	/*public static boolean tenimstock(int fil, int col) {
-		int[][] stock = new int [fil][col];
-		
-		for (int i = 0; i < stock.length; i++) {
-			for (int j = 0; j < stock.length; j++) {
+	public static boolean tenimstock(int[][] stock, int fil, int col) {
+		if (stock[fil][col]>=1) {
+		    return true;
 
-			}
 		}
-		return true;
-	}*/
+		else {
+		   return false;
+		}
+	}
 	
 	public static void main(String[] args) {
 
