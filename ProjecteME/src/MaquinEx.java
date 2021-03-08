@@ -6,47 +6,20 @@ public class MaquinEx {
         String productos[][] = new String[3][3];
         int stock[][] = new int[3][3];
         float precios[][] = new float[3][3];
-        
-        
-//Poner productos en motriz productos(string)
-        productos[0][0] = "Coca-cola";
-        productos[0][1] = "Fanta";
-        productos[0][2] = "Colacao";
-        productos[1][0] = "Monster";
-        productos[1][1] = "Agua50ml";
-        productos[1][2] = "Kinder";
-        productos[2][0] = "Oreo  ";
-        productos[2][1] = " Chips  ";
-        productos[2][2] = "  Zumo";
-//Poner precios en motriz precios (float) 
-        precios[0][0] =(float)1.00;
-        precios[0][1] =(float)1.00;
-        precios[0][2] =(float) 0.80;
-        precios[1][0] =(float) 1.50;
-        precios[1][1] =(float) 0.50;
-        precios[1][2] =(float) 1.20;
-        precios[2][0] =(float)1;
-        precios[2][1] =(float) 0.80;
-        precios[2][2] =(float) 0.80;
-//Poner stock en motriz stock (int)
-        stock[0][0]=12;
-        stock[0][1]=12;
-        stock[0][2]=12;
-        stock[1][0]=12;
-        stock[1][1]=12;
-        stock[1][2]=12;
-        stock[2][0]=12;
-        stock[2][1]=12;
-        stock[2][2]=12;
+        String contra = "pass1234";
         int menu=1;
-        
-            while (menu==1)
-            System.out.println("Bienvenido,que deseas hacer ?:");
-            System.out.print("");
-            System.out.println("***************Menu***************");
-            System.out.println("Ver Precios/productos/stock: 1");
-            System.out.println("Comprar: 2");
-            System.out.println("Mantenimiento: 3");
+        rellenarmatrizprecio(precios);
+        rellenarmatrizproductos(productos);
+        rellenarmatrizstock(stock);
+            while (menu==1) {
+                
+                System.out.println("Bienvenido,que deseas hacer ?:");
+                System.out.print("");
+                System.out.println("***************Menu***************");
+                System.out.println("Ver Precios/productos/stock: 1");
+                System.out.println("Comprar: 2");
+                System.out.println("Mantenimiento: 3");
+            
             menu=sc.nextInt();
            
             switch(menu) {
@@ -62,7 +35,7 @@ public class MaquinEx {
                   
                   break;
                 case 2:
-                    While(tenimstock()==false || tenimcanvi()==false ) {
+                    //While(tenimstock()==false || tenimcanvi()==false ) {
                         System.out.println("Que quieres comprar?");
                         System.out.println("introduce numero columna del productor");
                         int ComprarCol=sc.nextInt();
@@ -79,18 +52,35 @@ public class MaquinEx {
                                 System.out.println("No queda d'aquest producte");
                                 String contraseñaintroducida=sc.toString();
                         }
-                       }
+                      // }
                   break;
                 
                 case 3:
-                    
+                    int i=0;
                     System.out.println("Manteniment");
                     System.out.println("Introduzca la clave para manteniment del stock/canvi:");
-                    
+                    while (i<3) {
+                    String pass = sc.nextLine();
+                    System.out.print("");
+                    if (accesMan(contra,pass)==true) {
+                        System.out.println("Es fara el manteniment de umplir l'stock i el canvi");
+                        /*stock.rellenarStock(stock);*/
+                        /*stock.rellenarCanvi();*/
+                        i=3;
+                    }
+                    else {
+                        System.out.println("La contraseña introducida es incorrecta, vuelva probarlo!");
+                    i++;
+                    }
+                    }
                 default:
                   System.out.print("Escoja una de las opciones validas");
+                  break;
               }
-           }
+        
+            }
+    }
+    
         
     
     public void pressAnyKeyToContinue()
@@ -103,24 +93,23 @@ public class MaquinEx {
            catch(Exception e)
            {}  
     }
-
+    
     public static boolean tenimstock() {
-        // TODO Auto-generated method stub
+        
         return false;
     }
 
    public static boolean tenimcanvi() {
-        // TODO Auto-generated method stub
         return false;
     }
 
     public static String RetornCanvi() {
-        // TODO Auto-generated method stub
+        
         return null;
     }
 
     public static void showmatriz2(float[][] precios) {
-        // TODO Auto-generated method stub
+        
         for (int i=0; i < precios.length; i++) {
             for (int j=0; j < precios.length; j++) {
               System.out.print (precios[i][j]);
@@ -151,18 +140,50 @@ public class MaquinEx {
             System.out.println();
           }
     }
-    public boolean checkOwnerPassword2(String contraseñaintroducida ) {
-        String password = "Patata";
-        int i = 0;
-        while (i < 3) {
-            System.out.println("Enter password");
-            
-            if (contraseñaintroducida.equals(password)){
-                return true;
-            }
-            i++;
+    public static void rellenarmatrizstock(int[][] stock) {
+      
+//Poner stock en motriz stock (int)
+        stock[0][0]=12;
+        stock[0][1]=12;
+        stock[0][2]=12;
+        stock[1][0]=12;
+        stock[1][1]=12;
+        stock[1][2]=12;
+        stock[2][0]=12;
+        stock[2][1]=12;
+        stock[2][2]=12; 
+    }
+    public static void rellenarmatrizproductos(String[][] productos) {
+      //Poner productos en motriz productos(string)
+        productos[0][0] = "Coca-cola";
+        productos[0][1] = "Fanta";
+        productos[0][2] = "Colacao";
+        productos[1][0] = "Monster";
+        productos[1][1] = "Agua50ml";
+        productos[1][2] = "Kinder";
+        productos[2][0] = "Oreo  ";
+        productos[2][1] = " Chips  ";
+        productos[2][2] = "  Zumo";
+
+    }
+    public static void rellenarmatrizprecio(float[][] precios) {
+      //Poner precios en motriz precios (float) 
+        precios[0][0] =(float)1.00;
+        precios[0][1] =(float)1.00;
+        precios[0][2] =(float) 0.80;
+        precios[1][0] =(float) 1.50;
+        precios[1][1] =(float) 0.50;
+        precios[1][2] =(float) 1.20;
+        precios[2][0] =(float)1;
+        precios[2][1] =(float) 0.80;
+        precios[2][2] =(float) 0.80;
+    }
+public static boolean accesMan(String pass, String contra) {
+        
+        if (contra == pass) {
+            return true;
         }
+        
         return false;
     }
-
 }
