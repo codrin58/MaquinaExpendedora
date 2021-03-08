@@ -9,6 +9,7 @@ public class stock {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println(accesMan(pass));
+		System.out.println();
 		
 		/*/Proba per stock/
 	    if ( accesMan(pass,contra)==true) {
@@ -16,7 +17,8 @@ public class stock {
 	    }
 	    else {
 	        System.out.println("No tenim Stock");
-	    }*/
+	    }
+	    
 	}
 	
 	/***
