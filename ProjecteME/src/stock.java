@@ -55,10 +55,17 @@ public class stock {
 	public static boolean tenimstock(int[][] stock, int fil, int col) {
 		if (stock[fil][col]>=1) {
 		    return true;
-
 		}
 		else {
 		   return false;
+		}
+	}
+	
+	public static void rellenarMonedas(int[][] diners) {
+		for (int i=1; i < diners.length; i) {
+            for (int j=0; j < diners.length; j++) {
+            	diners [i][j] = 20;
+            } 
 		}
 	}
 
