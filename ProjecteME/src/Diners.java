@@ -6,7 +6,7 @@ public class Diners {
 
 	public static void main(String[] args) {
 		final int PREU = 155; //El producte
-		int monedes; //Convertir els centims, ens sortirà en decimal
+		int euros; //Convertir els centims, ens sortirà en decimal
 		int centims; //200=2€, 100=1€, 50=0.50€, 20=0.20€, 10=0.10€, 5=0.05€, 2=0.02€, 1=0.01€
 		int canvi = 155;
 		
@@ -24,13 +24,16 @@ public class Diners {
 		} else {
 			centims-=PREU;
 			System.out.println("Progressant canvi");
-			System.out.println(CanviEnMonedes(canvi));
+			System.out.println(CanviEnMonedes(canvi)); //No tinc ni idea de com relacionar aquesta funció amb la funció de "CanviEnMonedes"
 		}
 		System.out.println("Gracies per la compra!");
 	}
 	
 	public void CanviEnMonedes (double canvi) {
         int tornar = (int) (canvi * 100);
+        //Posar el preu del producte que ha triat el client.
+        //Convertir els cèntims en Euros (més professional).
+        //
 
         System.out.println("Para devolver " + canvi + " debes dar");
         // para cada moneda
@@ -72,12 +75,22 @@ public class Diners {
 		
 	}
 	
-	public void RecargarDiners () {
-		
+	public void RecargarDiners (int [][] monedes) {
+		monedes[0][0]=8;
+		monedes[0][1]=8;
+		monedes[0][2]=8;
+		monedes[][]=8;
+		monedes[][]=8;
+		monedes[][]=8;
 	}
 	
 	public void NoHiHaProducte () {
 		
 	}
+	
+	public void CentimsEuros () {
+		
+	}
+
 	
 }
